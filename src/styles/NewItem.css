@@ -1,0 +1,39 @@
+.newitem-wrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  min-height: 680px;
+  object-fit: cover;
+}
+.newitem-info {
+  width: 390px;
+  margin-top: 128px;
+  margin-bottom: 90px;
+  color: white;
+}
+.new-sign {
+  font-size: 14px;
+  letter-spacing: 10px;
+  opacity: 0.5;
+}
+.newitem-info h1 {
+  font-size: 3.5rem;
+  margin: 24px 0;
+}
+.newitem-info p {
+  opacity: 0.75;
+}
+.newitem-info button {
+  background-color: #d87d4a;
+  border: none;
+  padding: 1rem 2rem;
+  color: white;
+  cursor: pointer;
+  margin-top: 40px;
+  transition: 0.5s;
+}
+.newitem-info button:hover {
+  background-color: #fbaf85;
+}

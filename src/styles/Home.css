@@ -1,0 +1,95 @@
+.trending-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.zx9-speaker-image {
+  height: 380px;
+  transform: translateY(57%);
+  z-index: 3;
+}
+.circles {
+  position: absolute;
+  z-index: 0;
+  left: 50px;
+  transform: translate(-8%, -3%);
+}
+.zx9 {
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  gap: 130px;
+  background-color: #d87d4a;
+  padding: 0 100px;
+  flex-wrap: wrap;
+}
+.trenditem-info {
+  padding: 133px 0 124px 0;
+  max-width: 350px;
+}
+.trenditem-info h2 {
+  font-size: 3.5rem;
+  color: white;
+}
+.trenditem-info p {
+  color: rgba(255, 255, 255, 0.753);
+  margin: 24px 0 40px 0;
+}
+.zx9-button {
+  background-color: #000000;
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.zx9-button:hover {
+  background-color: #4c4c4c;
+}
+.zx7 {
+  position: relative;
+}
+.zx7 img {
+  max-width: 100%;
+}
+.zx7-trend-info {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 100px;
+}
+.zx7-trend-info h3 {
+  color: black;
+  font-size: 1.8rem;
+}
+.trend-item-button {
+  border: 1px solid black;
+  border-radius: 3px;
+  padding: 15px 30px;
+  transition: 0.5s;
+  background-color: transparent;
+}
+.trend-item-button:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+.yx1 {
+  display: flex;
+  gap: 1rem;
+}
+
+.yx1 img {
+  flex: 1;
+  border-radius: 8px;
+}
+.yx1-trend-info {
+  flex: 1;
+  background-color: #f1f1f1;
+  padding: 100px 95px;
+  border-radius: 8px;
+}
+.yx1-trend-info h3 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}

@@ -1,0 +1,35 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 35px 0;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.199);
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex: 1;
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.nav-links a {
+  transition: 0.5s;
+}
+.nav-links a:hover {
+  color: #d87d4a;
+}
+.brand,
+.cart-icon {
+  flex: 1;
+  cursor: pointer;
+}
+.cart-icon {
+  text-align: right;
+}
