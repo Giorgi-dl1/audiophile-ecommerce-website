@@ -4,8 +4,11 @@
   margin: 0;
   box-sizing: border-box;
 }
-.App {
+body {
   font-family: "Manrope", sans-serif;
+}
+
+.App {
   position: relative;
   padding: 0 165px;
 }
@@ -13,4 +16,32 @@
 a {
   color: inherit;
   text-decoration: none;
+}
+.tablet-size-image {
+  display: none;
+}
+.mobile-size-image {
+  display: none;
+}
+@media (max-width: 1024px) {
+  .tablet-size-image {
+    display: block;
+  }
+  .desktop-size-image {
+    display: none;
+  }
+  .App {
+    padding: 0 40px;
+  }
+}
+@media (max-width: 550px) {
+  .tablet-size-image {
+    display: none;
+  }
+  .mobile-size-image {
+    display: block;
+  }
+  html {
+    font-size: 15px;
+  }
 }

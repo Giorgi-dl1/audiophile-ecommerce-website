@@ -4,6 +4,7 @@ import NewItem from "../components/NewItem";
 import { Store } from "../store";
 import "../styles/Home.css";
 import circle from "../images/pattern-circles.svg";
+import Audiogear from "../components/Audiogear";
 export default function Home() {
   const {
     state: { data },
@@ -51,6 +52,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <Audiogear />
     </div>
   );
 }
