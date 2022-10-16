@@ -11,7 +11,6 @@ export default function CategoryScreen() {
     state: { data },
   } = useContext(Store);
   const filteredData = data.filter((item) => item.category === categoryName);
-  console.log(filteredData);
   return (
     <div>
       <div className="category-header">

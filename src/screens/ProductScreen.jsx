@@ -1,18 +1,20 @@
-import React from "react";
-import { useContext } from "react";
-import { Link, useParams } from "react-router-dom";
 import "../styles/ProductScreen.css";
-import { Store } from "../store";
-import { useState } from "react";
-import { useEffect } from "react";
 import Audiogear from "../components/Audiogear";
+import { Link, useParams } from "react-router-dom";
+import { Store } from "../store";
+import { useState, useContext, useEffect } from "react";
 export default function ProductScreen() {
   const [quantity, setQuantity] = useState(1);
   const [suggestedItems, setSuggestedItems] = useState([]);
+
   const { id, redirect } = useParams();
+
   const {
-    state: { data },
+    state: { data, cartItems },
+    dispatch,
   } = useContext(Store);
+
+  console.log(cartItems);
 
   const product = data.find((item) => item.id === Number(id));
 
@@ -25,7 +27,6 @@ export default function ProductScreen() {
     );
     setQuantity(1);
   }, [id, data]);
-  console.log(suggestedItems);
 
   const createMarkup = () => {
     return { __html: product.features };
@@ -37,6 +38,11 @@ export default function ProductScreen() {
     }
     setQuantity(quantity + amount);
   };
+
+  const addToCartHandler = () => {
+    dispatch({ type: "ADD_TO_CART", payload: { ...product, quantity } });
+  };
+
   return (
     <>
       <div className="productscreen-wrapper">
@@ -87,7 +93,12 @@ export default function ProductScreen() {
                   +
                 </span>
               </div>
-              <button className="styled-button">ADD TO CART</button>
+              <button
+                className="styled-button"
+                onClick={() => addToCartHandler()}
+              >
+                ADD TO CART
+              </button>
             </div>
           </div>
         </div>
