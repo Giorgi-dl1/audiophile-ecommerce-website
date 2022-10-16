@@ -1,12 +1,17 @@
 import { useContext } from "react";
 import { Store } from "../store";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import cartIcon from "../images/icon-cart.svg";
 import logo from "../images/logo.svg";
 import "../styles/Header.css";
 import CategoryThumbs from "../components/CategoryThumbs";
 import { useState } from "react";
+import { useEffect } from "react";
 export default function Header() {
+  const pathname = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
   const [showDropdown, setShowDropdown] = useState(false);
   const {
     state: { categories },

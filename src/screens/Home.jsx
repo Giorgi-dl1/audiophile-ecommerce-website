@@ -1,15 +1,10 @@
-import { useContext } from "react";
 import CategoryThumbs from "../components/CategoryThumbs";
 import NewItem from "../components/NewItem";
-import { Store } from "../store";
 import "../styles/Home.css";
 import circle from "../images/pattern-circles.svg";
 import Audiogear from "../components/Audiogear";
+import { Link } from "react-router-dom";
 export default function Home() {
-  const {
-    state: { data },
-  } = useContext(Store);
-  console.log(data);
   return (
     <div>
       <NewItem />
@@ -28,7 +23,9 @@ export default function Home() {
               Upgrade to premium speakers that are phenomenally built to deliver
               truly remarkable sound.
             </p>
-            <button className="zx9-button">SEE PRODUCT</button>
+            <Link to="/product/6/home">
+              <button className="zx9-button">SEE PRODUCT</button>
+            </Link>
           </div>
         </div>
         <div className="zx7">
@@ -38,7 +35,9 @@ export default function Home() {
           />
           <div className="zx7-trend-info">
             <h3>ZX7 speaker</h3>
-            <button className="trend-item-button">SEE PRODUCT</button>
+            <Link to="/product/5/home">
+              <button className="trend-item-button">SEE PRODUCT</button>
+            </Link>
           </div>
         </div>
         <div className="yx1">
@@ -48,7 +47,9 @@ export default function Home() {
           />
           <div className="yx1-trend-info">
             <h3>YX1 EARPHONES</h3>
-            <button className="trend-item-button">SEE PRODUCT</button>
+            <Link to="/product/1/home">
+              <button className="trend-item-button">SEE PRODUCT</button>
+            </Link>
           </div>
         </div>
       </div>

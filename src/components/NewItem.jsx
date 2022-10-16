@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "../styles/NewItem.css";
 export default function NewItem() {
   return (
@@ -24,7 +25,9 @@ export default function NewItem() {
           Experience natural, lifelike audio and exceptional build quality made
           for the passionate music enthusiast.
         </p>
-        <button className="styled-button">SEE PRODUCT</button>
+        <Link to="/product/4/home">
+          <button className="styled-button">SEE PRODUCT</button>
+        </Link>
       </div>
     </div>
   );

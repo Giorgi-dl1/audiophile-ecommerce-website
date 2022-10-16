@@ -37,19 +37,12 @@
   max-width: 540px;
   object-fit: cover;
   width: 50%;
+  border-radius: 10px;
 }
 .product-description .new-sign {
   color: #d87d4a;
 }
-.product-description h2 {
-  font-size: 2.5rem;
-  line-height: 2.7rem;
-  margin: 1rem 0 2rem 0;
-}
-.product-description p {
-  opacity: 0.5;
-  font-size: 0.9rem;
-}
+
 @media (max-width: 1024px) {
   .product-item {
     flex-direction: column;
@@ -66,7 +59,7 @@
     width: 100%;
     max-width: 100%;
   }
-  .product-description {
+  .category-wrapper .product-description {
     text-align: center;
   }
 }

@@ -16,7 +16,7 @@ export default function Footer() {
         <div className="nav-links">
           <Link to="/">HOME</Link>
           {categories.map((item) => (
-            <Link to="/" key={item}>
+            <Link to={`/category/${item}`} key={item}>
               {item}
             </Link>
           ))}

@@ -1,5 +1,5 @@
 import "../styles/CategoryScreen.css";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useContext } from "react";
 import { Store } from "../store";
 import CategoryThumbs from "../components/CategoryThumbs";
@@ -43,9 +43,11 @@ export default function CategoryScreen() {
               />
               <div className="product-description">
                 {item.new && <div className="new-sign">NEW PRODUCT</div>}
-                <h2>{item.name}</h2>
-                <p>{item.description}</p>
-                <button className="styled-button">SEE PRODUCT</button>
+                <h2 className="styled-header">{item.name}</h2>
+                <p className="styled-paragraph">{item.description}</p>
+                <Link to={`/product/${item.id}/category-${categoryName}`}>
+                  <button className="styled-button">SEE PRODUCT</button>
+                </Link>
               </div>
             </div>
           ))}

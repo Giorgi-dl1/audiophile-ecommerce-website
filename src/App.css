@@ -4,6 +4,9 @@
   margin: 0;
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   font-family: "Manrope", sans-serif;
 }
@@ -23,6 +26,15 @@ a {
 .mobile-size-image {
   display: none;
 }
+.styled-header {
+  font-size: 2.5rem;
+  line-height: 2.7rem;
+  margin: 1rem 0 2rem 0;
+}
+.styled-paragraph {
+  opacity: 0.5;
+  font-size: 0.9rem;
+}
 .styled-button {
   background-color: #d87d4a;
   border: none;
@@ -31,6 +43,8 @@ a {
   cursor: pointer;
   margin-top: 40px;
   transition: 0.5s;
+  font-size: 13px;
+  min-width: 160px;
 }
 .styled-button:hover {
   background-color: #fbaf85;
@@ -39,6 +53,10 @@ a {
   .tablet-size-image {
     display: block;
   }
+  .styled-header {
+    font-size: 1.75rem;
+  }
+
   .desktop-size-image {
     display: none;
   }
