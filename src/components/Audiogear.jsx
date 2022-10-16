@@ -18,17 +18,17 @@ export default function Audiogear() {
       </div>
       <div className="audiogear-image">
         <img
-          src="./assets/shared/desktop/image-best-gear.jpg"
+          src="/assets/shared/desktop/image-best-gear.jpg"
           className="desktop-size-image"
           alt="boy with earphones"
         />
         <img
-          src="./assets/shared/tablet/image-best-gear.jpg"
+          src="/assets/shared/tablet/image-best-gear.jpg"
           className="tablet-size-image"
           alt="boy with earphones"
         />
         <img
-          src="./assets/shared/mobile/image-best-gear.jpg"
+          src="/assets/shared/mobile/image-best-gear.jpg"
           className="mobile-size-image"
           alt="boy with earphones"
         />

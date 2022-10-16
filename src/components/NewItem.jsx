@@ -24,7 +24,7 @@ export default function NewItem() {
           Experience natural, lifelike audio and exceptional build quality made
           for the passionate music enthusiast.
         </p>
-        <button>SEE PRODUCT</button>
+        <button className="styled-button">SEE PRODUCT</button>
       </div>
     </div>
   );

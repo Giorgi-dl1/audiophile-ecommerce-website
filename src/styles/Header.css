@@ -62,26 +62,26 @@ header {
   left: -40px;
   right: -40px;
   transition: 0.5s;
-  z-index: 1;
+  z-index: 12;
   display: none;
 }
 .dropdown .category-thumbs {
   margin: 0;
 }
-.background.show {
-  background-color: rgba(0, 0, 0, 0.623);
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top: 95px;
-  z-index: 2;
-}
+
 @media (max-width: 1024px) {
   .dropdown {
     top: -800px;
     display: block;
-    z-index: 3;
+  }
+  .background.show {
+    background-color: rgba(0, 0, 0, 0.623);
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -100px;
+    top: 95px;
+    z-index: 6;
   }
   .dropdown.active {
     top: 95px;

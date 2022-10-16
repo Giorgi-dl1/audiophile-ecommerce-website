@@ -27,18 +27,7 @@
 .newitem-info p {
   opacity: 0.75;
 }
-.newitem-info button {
-  background-color: #d87d4a;
-  border: none;
-  padding: 1rem 2rem;
-  color: white;
-  cursor: pointer;
-  margin-top: 40px;
-  transition: 0.5s;
-}
-.newitem-info button:hover {
-  background-color: #fbaf85;
-}
+
 @media (max-width: 1024px) {
   .newitem-info {
     margin-left: auto;
