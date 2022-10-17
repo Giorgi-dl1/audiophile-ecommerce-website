@@ -32,7 +32,7 @@
 .cart-icon {
   text-align: right;
 }
-.brand,
+.brand a,
 .cart-icon img {
   cursor: pointer;
 }
@@ -68,7 +68,30 @@ header {
 .dropdown .category-thumbs {
   margin: 0;
 }
-
+.background.cart-background {
+  background-color: rgba(0, 0, 0, 0.623);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -100px;
+  top: 101px;
+  z-index: 15;
+}
+.cart-icon {
+  position: relative;
+}
+.cart-icon-quantity {
+  color: white;
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  background-color: #d87d4a;
+  border-radius: 50%;
+  padding: 0 6px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
 @media (max-width: 1024px) {
   .dropdown {
     top: -800px;
@@ -80,7 +103,7 @@ header {
     left: 0;
     right: 0;
     bottom: -100px;
-    top: 95px;
+    top: 101px;
     z-index: 6;
   }
   .dropdown.active {

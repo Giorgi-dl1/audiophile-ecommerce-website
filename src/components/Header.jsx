@@ -7,16 +7,22 @@ import "../styles/Header.css";
 import CategoryThumbs from "../components/CategoryThumbs";
 import { useState } from "react";
 import { useEffect } from "react";
+import Cart from "./Cart";
 export default function Header() {
+  const [showDropdown, setShowDropdown] = useState(false);
+  const [showCart, setShowCart] = useState(false);
+
   const pathname = useLocation();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
-  const [showDropdown, setShowDropdown] = useState(false);
+
   const {
-    state: { categories },
+    state: { categories, cartItems },
   } = useContext(Store);
 
+  const totalCartItems = cartItems.reduce((a, c) => a + c.quantity, 0);
   return (
     <>
       <header>
@@ -43,14 +49,32 @@ export default function Header() {
             ))}
           </div>
           <div className="cart-icon">
-            <img src={cartIcon} alt="cart-icon" />
+            {totalCartItems >= 1 && (
+              <div
+                className="cart-icon-quantity"
+                onClick={() => setShowCart(!showCart)}
+              >
+                {totalCartItems}
+              </div>
+            )}
+
+            <img
+              src={cartIcon}
+              alt="cart-icon"
+              className="cart-image"
+              onClick={() => setShowCart(!showCart)}
+            />
           </div>
         </div>
         <div className={showDropdown ? "dropdown active" : "dropdown"}>
           <CategoryThumbs setShowDropdown={setShowDropdown} />
         </div>
+        <div className={showCart ? "cart-div active" : "cart-div"}>
+          <Cart setShowCart={setShowCart} />
+        </div>
       </header>
-      <div className={showDropdown ? "background show" : "background"}></div>
+      <div className={showDropdown ? "background show" : "background"} />
+      <div className={showCart ? "background cart-background" : "background"} />
     </>
   );
 }

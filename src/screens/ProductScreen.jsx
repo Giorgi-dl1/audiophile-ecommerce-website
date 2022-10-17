@@ -3,6 +3,7 @@ import Audiogear from "../components/Audiogear";
 import { Link, useParams } from "react-router-dom";
 import { Store } from "../store";
 import { useState, useContext, useEffect } from "react";
+import QuantityControl from "../components/QuantityControl";
 export default function ProductScreen() {
   const [quantity, setQuantity] = useState(1);
   const [suggestedItems, setSuggestedItems] = useState([]);
@@ -10,11 +11,9 @@ export default function ProductScreen() {
   const { id, redirect } = useParams();
 
   const {
-    state: { data, cartItems },
+    state: { data },
     dispatch,
   } = useContext(Store);
-
-  console.log(cartItems);
 
   const product = data.find((item) => item.id === Number(id));
 
@@ -32,15 +31,9 @@ export default function ProductScreen() {
     return { __html: product.features };
   };
 
-  const updateQuantity = (amount) => {
-    if (quantity + amount <= 0) {
-      return;
-    }
-    setQuantity(quantity + amount);
-  };
-
   const addToCartHandler = () => {
     dispatch({ type: "ADD_TO_CART", payload: { ...product, quantity } });
+    setQuantity(1);
   };
 
   return (
@@ -74,25 +67,7 @@ export default function ProductScreen() {
               $ {product.price.toLocaleString("en-US")}
             </div>
             <div className="addtocart-div">
-              <div className="quantity-control">
-                <span
-                  className={
-                    quantity === 1 ? "disabled-button" : "quantity-button"
-                  }
-                  onClick={() => {
-                    updateQuantity(-1);
-                  }}
-                >
-                  -
-                </span>
-                <span>{quantity}</span>
-                <span
-                  className="quantity-button"
-                  onClick={() => updateQuantity(1)}
-                >
-                  +
-                </span>
-              </div>
+              <QuantityControl quantity={quantity} setQuantity={setQuantity} />
               <button
                 className="styled-button"
                 onClick={() => addToCartHandler()}
