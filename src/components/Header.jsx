@@ -1,12 +1,10 @@
-import { useContext } from "react";
+import { useContext, useState, useEffect } from "react";
 import { Store } from "../store";
 import { Link, useLocation } from "react-router-dom";
 import cartIcon from "../images/icon-cart.svg";
 import logo from "../images/logo.svg";
 import "../styles/Header.css";
 import CategoryThumbs from "../components/CategoryThumbs";
-import { useState } from "react";
-import { useEffect } from "react";
 import Cart from "./Cart";
 export default function Header() {
   const [showDropdown, setShowDropdown] = useState(false);

@@ -1,9 +1,9 @@
 import CategoryThumbs from "../components/CategoryThumbs";
 import NewItem from "../components/NewItem";
-import "../styles/Home.css";
 import circle from "../images/pattern-circles.svg";
 import Audiogear from "../components/Audiogear";
 import { Link } from "react-router-dom";
+import "../styles/Home.css";
 export default function Home() {
   return (
     <div>

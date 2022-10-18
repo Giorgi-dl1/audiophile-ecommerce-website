@@ -1,9 +1,10 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useRef } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Store } from "../store";
 import QuantityControl from "./QuantityControl";
 import "../styles/Cart.css";
-import { useRef } from "react";
 export default function Cart({ setShowCart }) {
+  const { pathname } = useLocation();
   const cartRef = useRef(null);
   const {
     state: { cartItems },
@@ -13,9 +14,14 @@ export default function Cart({ setShowCart }) {
     dispatch({ type: "REMOVE_ALL_ITEMS_FROM_CART" });
   };
 
+  const redirectString =
+    pathname.split("/")[1] === "product"
+      ? pathname.split("/").splice(0, 3).join("-").slice(1) + "-home"
+      : pathname !== "/"
+      ? pathname.split("/").splice(0, 3).join("-").slice(1)
+      : "home";
   useEffect(() => {
     function handleClickOutside(event) {
-      console.log(event.target.classList);
       if (
         cartRef.current &&
         !cartRef.current.contains(event.target) &&
@@ -76,9 +82,14 @@ export default function Cart({ setShowCart }) {
         <p style={{ opacity: 0.5 }}>TOTAL</p>
         <div className="price">$ {totalPrice.toLocaleString()}</div>
       </div>
-      <div className="styled-button" style={{ textAlign: "center" }}>
-        CHECKOUT
-      </div>
+      <Link
+        to={`/checkout/${redirectString}`}
+        onClick={() => setShowCart(false)}
+      >
+        <div className="styled-button" style={{ textAlign: "center" }}>
+          CHECKOUT
+        </div>
+      </Link>
     </div>
   ) : (
     <div className="cart" ref={cartRef}>
