@@ -34,7 +34,7 @@ export default function Home() {
             alt="speaker_image"
           />
           <div className="zx7-trend-info">
-            <h3>ZX7 speaker</h3>
+            <h3 style={{marginBottom:'2rem'}}>ZX7 speaker</h3>
             <Link to="/product/5/home">
               <button className="trend-item-button">SEE PRODUCT</button>
             </Link>

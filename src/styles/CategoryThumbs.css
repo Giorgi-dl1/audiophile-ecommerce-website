@@ -54,9 +54,14 @@
     margin-top: 80px;
   }
 }
-@media (max-width: 550px) {
+@media(max-width: 550px) {
   .category-thumbs {
     flex-direction: column;
     gap: 50px;
+  }
+}
+@media(max-width: 450px){
+  .category-thumb{
+    width: 100%;
   }
 }
